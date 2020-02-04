@@ -8,8 +8,13 @@
     <title>Question Page</title>
 </head>
 <body>
-    <h1>This is the question page</h1>
+    <h1>{{  question.question_text }}</h1>
 
-    <p>{{ question }}</p>
+    <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }}</li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
